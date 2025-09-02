@@ -100,8 +100,8 @@ if boton_generar:
         with st.spinner('Fase 1/3: Generando términos de búsqueda optimizados...'):
             # --- PASO 1: Prompt para generar términos de búsqueda ---
             prompt_terminos = f"""
-            Eres un experto en diseño experimental en biotecnología y búsqueda de literatura científica.
-            TU TAREA: Dada la siguiente idea de investigación, genera una lista de TÉRMINOS DE BÚSQUEDA OPTIMIZADOS para usar en una API de artículos científicos (como Semantic Scholar).
+            Actúa como un experto en diseño experimental en biotecnología y farmacia, especializado en la extracción y evaluación de compuestos bioactivos de productos naturales.
+            TU TAREA: Dada la siguiente idea de investigación, genera una lista de TÉRMINOS DE BÚSQUEDA OPTIMIZADOS para usar en una API de artículos científicos (como Semantic Scholar), generarás propuestas metodológicamente robustas, viables y basadas en la evidencia científica más reciente. Serás metódico, claro y estructurado en tus respuestas.
             Los términos deben ser precisos, relevantes y capturar los conceptos clave de la idea. Devuélvelos como una sola cadena de texto separada por comas.
 
             IDEA: {idea_del_usuario}
@@ -143,20 +143,21 @@ if boton_generar:
             **INSTRUCCIONES PARA EL PLAN:**
             Basándote en la idea y en la literatura científica proporcionada, genera un plan de trabajo que incluya las siguientes secciones en español:
 
-            1.  **Título Tentativo del Proyecto:** [Sugiere un título basado en la idea y la literatura]
-            2.  **Introducción y Estado del Arte:** [Síntesis breve del contexto, citando hallazgos clave de los abstracts si son relevantes]
+            1.  **Título Tentativo del Proyecto:** [Sugiere un título basado en la idea y la literatura, que sea formal y descriptivo]
+            2.  **Introducción y justificación:** [Síntesis breve del contexto, citando hallazgos clave de los abstracts si son relevantes, introducir las citas bibliograficas consultada]
             3.  **Objetivos:**
                 - **Objetivo General:** [Uno]
-                - **Objetivos Específicos:** [3-5]
+                - **Objetivos Específicos:** [De 3 a 5, numerados y medibles]
             4.  **Metodología Propuesta (DETALLADA):**
-                - **Diseño Experimental:** [Tipo de estudio, grupos, réplicas]
+                - **Obtención y preparación de la materia prima:** [Tipo de ensayos, grupos, réplicas]
                 - **Extracción de Proteínas:** [Protocolo sugerido, equipos]
                 - **Hidrólisis Enzimática:** [Enzimas a probar, condiciones]
-                - **Ensayo de Capacidad Antioxidante:** [Métodos específicos, e.g., ORAC, DPPH, ABTS]
+                - **Ensayo de Capacidad Antioxidante:** [Métodos específicos, e.g., ORAC, DPPH, ABTS/FRAP]
                 - **Ensayo de Actividad Antiinflamatoria:** [Métodos específicos, e.g., inhibición de COX-2, ensayos con células]
+                - **Ensayo de citotoxicidad:** [Mencionar linea celular y ensayo como MTT]
                 - **Análisis Estadístico:** [Software, tests a usar]
-            5.  **Cronograma Tentativo:** [Dividido por trimestres o meses, con las actividades principales]
-            6.  **Recursos Necesarios:** [Reactivos, equipos, software, personal]
+            5.  **Cronograma Tentativo:** [Organizado en una tabla trimestral o cuatrimestral con las etapas o actividades principales]
+            6.  **Recursos Necesarios:** [Reactivos críticos, lista de equipos, material biológico, software, personal]
 
             **Formato:** Usa **negritas** para los títulos de sección (ej: **4. Metodología Propuesta**) y listas con viñetas para los items.
             """
@@ -185,4 +186,5 @@ if boton_generar:
         )
 
     else:
+
         st.warning("Por favor, ingrese una idea de investigación primero.")
